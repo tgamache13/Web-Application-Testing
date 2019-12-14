@@ -1,0 +1,35 @@
+
+.App {
+    width: 80%;
+    padding-left: 10%;
+    background-color:green;
+}
+.display {
+    display: flex;
+    width: 75%;
+    align-items: space-around;
+    padding-left: 10%;
+    
+    .display-strikes, .display-balls {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        border: 3px solid black;
+        .strike-label, .ball-label, .strike-number, .ball-number{
+            font-size: 5em;
+        }
+    }
+}
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+    .strike, .ball, .foul, .hit, .homer {
+        font-size: 3em;
+        color: white;
+        background-color: black;
+    }
+}

@@ -14,6 +14,9 @@ export default function Dashboard () {
     const Strike = e => {
         setStrike(strike + 1);
         StrikeOut(strike);
+        if(strike === 3){
+            setStrike(0);
+        }
     };
     const StrikeOut = (strike) => {
         if(strike >= 2){
@@ -24,6 +27,9 @@ export default function Dashboard () {
     const Ball = e => {
         setBall(ball + 1);
         Walk(ball);
+        if(ball === 4) {
+            setBall(0);
+        }
     };
 
     const Foul = e => {
@@ -51,15 +57,16 @@ export default function Dashboard () {
 
     console.log("Strikes=",strike, "Balls=",ball, "Fouls=",foul, "Hits=",hit, "Homer=", homer, "Walks", walk,"Outs=", out);
     return (
-        <div>
+        <div className-="dashboard">
             <Display strike={strike} ball={ball} foul={foul} hit={hit} homer={homer} walk={walk} out={out} />
+            <div className="buttons">
             <button className="strike" onClick={Strike}>Strike</button>
             <button className="ball" onClick={Ball}>Ball</button>
             <button className="foul" onClick={Foul}>Foul</button>
             <button className="hit" onClick={Hit}>Hit</button>
             <button className="homer" onClick={Homer}>Homer</button>
-        
-            <Inning  />
+            </div>
+            {/* <Inning  /> */}
         </div>
     );
 }
